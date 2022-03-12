@@ -1,17 +1,11 @@
-'''
-CONTROLS THE LOGIN TEMPLATES
-
-THE SIGN UP FUNCTIONALITY SEND THE EMAIL YOU MAY WISH TO DISCONNECT THAT IF YOU DONT WANT TO IMPLEMENT A SIGN UP EMAIL
-'''
-
 
 from flask import render_template,url_for,flash,redirect,request
 from flask_login import login_user, logout_user, login_required
 from . import auth
-# from ..models import User
+from ..models import User
 from .forms import RegForm,LoginForm
-# from .. import db
-# from ..email import mail_message
+from .. import db
+from ..email import mail_message
 
 @auth.route('/login', methods = ['GET','POST'])
 def login():
