@@ -1,8 +1,8 @@
 from email import message
 from flask import render_template, request, redirect, url_for, abort
 from . import main
+from .forms import UpdateProfile,BlogForm,CommentForm
 from ..models import User,Blog,Comment,Upvote,Downvote
-# from .forms import exampleFormposts
 from flask_login import login_required, current_user
 
 posts = [
@@ -37,10 +37,11 @@ def profile(name):
     user = User.query.filter_by(username = name).first()
     user_id = current_user._get_current_object().id
     posts = Blog.query.filter_by(user_id = user_id).all()
+    image = url_for('static', filename='photos/' + current_user.profile_pic_path)
     if user is None:
         abort(404)
 
-    return render_template("profile/profile.html", user = user,posts=posts)
+    return render_template("profile/profile.html", user = user,posts=posts, image=image)
 
 
 @main.route('/user/<name>/updateprofile', methods = ['POST','GET'])

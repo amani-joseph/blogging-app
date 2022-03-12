@@ -4,13 +4,13 @@
 <div class="container d-flex flex-column justify-content-center">
 	<div class="container m-3">
 		<div class="row">
-			<div class="col-md-6 pict">
-				<div class="card testimonial-card">
+			<div class="col-lg-6 col-sm-12 col-xs-12">
+				<div class="card testimonial-card border rounded-3">
 					<div class="card-img text-center">
 						{% if user.profile_pic_path %}
 						<img
-							src="{{url_for('static',filename=user.profile_pic_path)}}"
-							style="height: 300px; border-radius: 50%"
+							src="{{ image }}"
+							style="height: 350px; width: auto; border-radius: 50%"
 							class="card-img"
 							alt=" avatar"
 						/>
@@ -22,6 +22,8 @@
 
 					<div class="card-body">
 						<h5 class="text-center"> {{user.username| capitalize}}</h5>
+						<hr />
+						<h5 class="text-center"> {{user.email}}</h5>
 						<hr />
 						{% if user.bio %}
 						<p class="text-center m-3"
@@ -35,10 +37,10 @@
 						<div class="profpic">
 							<div id="updates">
 								<a href="{{url_for('main.updateprofile',name=user.username)}}">
-									<button class="btn btn-sm btn-info">Edit Bio</button>
+									<button class="btn btn-sm btn-info m-3">Edit Bio</button>
 								</a>
-								<button class="btn btn-sm btn-warning" id="profbutton"
-									>update pic</button
+								<button class="btn btn-sm btn-secondary m-3" id="profbutton"
+									>Update Profile-pic</button
 								>
 							</div>
 
