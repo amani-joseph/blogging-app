@@ -4,9 +4,9 @@ class Config:
     General configurations parent class
     """
     SECRET_KEY = os.environ.get('SECRET_KEY')   
-    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://<<user>>:<<Password>>@localhost/<<db_name>>'
-    # SQLALCHEMY_TRACK_MODIFICATIONS = True
-    # UPLOADED_PHOTOS_DEST = 'app/static/photos'  
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://j03:j03@localhost/blog'
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
+    UPLOADED_PHOTOS_DEST = 'app/static/photos'  
     #   email configurations
     # MAIL_SERVER = 'smtp.googlemail.com'
     # MAIL_PORT = 587 
@@ -38,7 +38,7 @@ class TestConfig(Config):
     
 class DevConfig(Config):
 
-    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://<<user>>:<<Password>>@localhost/<<db_name>>'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://j03:j03@localhost/blog'
 
     DEBUG = True
 
