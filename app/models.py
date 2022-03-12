@@ -1,3 +1,4 @@
+from email.policy import default
 from . import db,login_manager
 from datetime import datetime
 from flask_login import UserMixin,current_user
@@ -10,7 +11,7 @@ class User(UserMixin, db.Model):
     email  = db.Column(db.String(255),unique = True,nullable = False)
     secure_password = db.Column(db.String(255),nullable = False)
     bio = db.Column(db.String(255))
-    profile_pic_path = db.Column(db.String())
+    profile_pic_path = db.Column(db.String(20),nullable = False, default='default.png')
     blogs = db.relationship('Blog', backref='user', lazy='dynamic')
     comment = db.relationship('Comment', backref='user', lazy='dynamic')
     upvote = db.relationship('Upvote',backref='user',lazy='dynamic')
