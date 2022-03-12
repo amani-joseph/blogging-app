@@ -1,9 +1,19 @@
 <!-- @format -->
 
 {% extends 'base.html'%} {% import 'macros.html' as macro %} {% block content %}
-    <div class="container">
-        <h1 class="display-6 fw-bolder text-center m-4">Thank you Amani</h1>
-        <img class="img-fluid" src="https://images.pexels.com/photos/7430705/pexels-photo-7430705.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
-    </div>
+<div class="container">
+	{% for post in posts %}
+	<article class="media content-section">
+		<div class="media-body">
+			<div class="article-metadata">
+				<a class="mr-2" href="#">{{ post.author }}</a>
+				<small class="text-muted">{{ post.date_posted }}</small>
+			</div>
+			<h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+			<p class="article-content">{{ post.content }}</p>
+		</div>
+	</article>
+	{% endfor %}
+</div>
 
-{% endblock%}
+{% endblock content%}
