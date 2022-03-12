@@ -1,4 +1,4 @@
-export SECRET_KEY='I_With_Ukraine'
+export SECRET_KEY='I_stand_With_Ukraine'
 
 #export MAIL_USERNAME=<<YOUR EMAIL>>
 #export MAIL_PASSWORD= << YOUR EMAIL PASSWORD>>
