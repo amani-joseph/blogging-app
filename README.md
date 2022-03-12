@@ -1,6 +1,6 @@
 <!-- @format -->
 
-# pitch-in-sixty
+# blogging-app
 
 ## Author
 
