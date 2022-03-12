@@ -1,0 +1,91 @@
+<!-- @format -->
+
+{% extends 'base.html'%} {% block content %}
+<div class="container d-flex flex-column justify-content-center">
+	<div class="container m-3">
+		<div class="row">
+			<div class="col-md-6 pict">
+				<div class="card testimonial-card">
+					<div class="card-img text-center">
+						{% if user.profile_pic_path %}
+						<img
+							src="{{url_for('static',filename=user.profile_pic_path)}}"
+							style="height: 300px; border-radius: 50%"
+							class="card-img"
+							alt=" avatar"
+						/>
+						{%else%}
+						<p class="text-center m-3">No profile picture</p>
+
+						{% endif %}
+					</div>
+
+					<div class="card-body">
+						<h5 class="text-center"> {{user.username| capitalize}}</h5>
+						<hr />
+						{% if user.bio %}
+						<p class="text-center m-3"
+							><i class="fas fa-quote-left"></i> {{user.bio}}</p
+						>
+						{%else%}
+						<p class="text-center m-3">
+							{{user.username| capitalize}} has no bio
+						</p>
+						{% endif %} {% if user == current_user %}
+						<div class="profpic">
+							<div id="updates">
+								<a href="{{url_for('main.updateprofile',name=user.username)}}">
+									<button class="btn btn-sm btn-info">Edit Bio</button>
+								</a>
+								<button class="btn btn-sm btn-warning" id="profbutton"
+									>update pic</button
+								>
+							</div>
+
+							<div id="imgform">
+								<form
+									action="{{url_for('main.update_pic',name=user.username)}}"
+									method="post"
+									enctype="multipart/form-data"
+								>
+									<input
+										type="file"
+										name="photo"
+										class="form-control"
+										required
+									/>
+									<input
+										type="submit"
+										class="btn btn-sm btn-info"
+										id="submit"
+									/>
+								</form>
+							</div>
+						</div>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+			<div class="container col-md-12"></div>
+			<div class="col-lg-12" id="user">
+				{% if current_user %}
+				<h3
+					class="text-center fw-bolder p-3 text-decoration-underline border rounded-3"
+					style="background: #09203f"
+					>You have {{user.blogs.count()}} Blogs</h3
+				>
+				{% for i in posts%}
+				<div class="blogs text-center text-white">
+					<h5>Title: {{i.title}}</h5>
+					<h6>{{i.post}}</h6>
+					<p>{{i.comment.count()}} Comments</p>
+				</div>
+
+				{%endfor%} {%else%}
+				<h3>You have no blogs</h3>
+				{%endif%}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
