@@ -1,9 +1,9 @@
 from email import message
 from flask import render_template, request, redirect, url_for, abort
+from ..request import get_quote
 from . import main
 from .forms import UpdateProfile,BlogForm,CommentForm
 from ..models import User,Blog,Comment,Upvote,Downvote
-from ..request import get_quote
 from flask_login import login_required, current_user
 
 
