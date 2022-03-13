@@ -16,12 +16,12 @@
 					<p class="article-content">{{ post.post }}</p>
                          <footer class="blockquote-footer text-center" style="color:cyan;"> Posted by: {{post.user.username}}</footer>
 								<div><span class="foot" >{{post.comment.count()}} Comments</span> 
-									<span class="foot" > <a href="{{url_for('main.like',id = post.id)}}"><i class="fa fa-thumbs-up" style="font-size:18px;color: cyan"></i></a> {{post.upvote.count()}}</span>
+									<span class="foot" > <a href="{{url_for('main.like',id = post.id)}}"><ion-icon name="thumbs-up"></ion-icon></a> {{post.upvote.count()}}</span>
 									
 									
-									<span class="foot"> <a href="{{url_for('main.dislike',id = post.id)}}"> <i class="fa fa-thumbs-down" style="color:yellow;"></i> {{post.downvote.count()}}</a></span></div>
+									<span class="foot"> <a href="{{url_for('main.dislike',id = post.id)}}"> <ion-icon name="thumbs-down"></ion-icon> {{post.downvote.count()}}</a></span></div>
 			
-								<a href="{{url_for('main.comment',post_id = post.id)}}" class="btn btn-info btn-sm"> Comment</a>
+								<a href="{{url_for('main.comment',blog_id = post.id)}}" class="btn btn-info btn-sm"> Comment</a>
 							</div>
 				</div>
 			</article>
