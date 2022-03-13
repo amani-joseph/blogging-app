@@ -1,5 +1,7 @@
 <!-- @format -->
 
 {% extends 'base.html'%} {% import 'macros.html' as macro %} {% block content %}
+
+<div class="container-fluid"> {{ macro.displayHero() }} </div>
 <div class="container"> {{ macro.display(posts) }} </div>
 {% endblock content%}

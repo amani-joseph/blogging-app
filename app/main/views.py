@@ -3,28 +3,17 @@ from flask import render_template, request, redirect, url_for, abort
 from . import main
 from .forms import UpdateProfile,BlogForm,CommentForm
 from ..models import User,Blog,Comment,Upvote,Downvote
+from ..request import get_quote
 from flask_login import login_required, current_user
 
-posts = [
-    {
-        'author': 'Amani',
-        'title': 'Blog Post 1',
-        'content': 'First post content',
-        'date_posted': 'March 12, 2022'
-    },
-    {
-        'author': 'Joe',
-        'title': 'Blog Post 2',
-        'content': 'Second post content',
-        'date_posted': 'March 12, 2022'
-    }
-]
+
 
 @main.route('/')
 def index():
     blogs = Blog.query.all()
-    print(blogs)
-    return render_template('index.html', posts=blogs)
+    random_quote = get_quote()
+    print(random_quote)
+    return render_template('index.html', posts=blogs, quote=random_quote)
 
 
 @main.route('/about/')
