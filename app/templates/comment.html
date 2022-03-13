@@ -10,9 +10,8 @@ content %}
 			{% for comment in all_comments %}
 			<div class="card w-90 mb-3">
 				<div class="card-body">
-					<!-- <h5>{{comment.post.title}}</h5> -->
-					<!-- <p class="card-title">{{ comment.comment }}</p>
-					<p class="card-text">--- {{comment.user.username}}</p> -->
+					<p class="card-title">{{ comment.comment }}</p>
+					<p class="card-text">--- {{comment.user.username}}</p>
 				</div>
 			</div>
 			{% endfor %}
