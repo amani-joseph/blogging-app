@@ -50,7 +50,7 @@ class Blog(db.Model):
     downvote = db.relationship('Downvote',backref='blog',lazy='dynamic')
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     time = db.Column(db.DateTime, default = datetime.utcnow)
-    category = db.Column(db.String(255), index = True,nullable = False)
+    # category = db.Column(db.String(255), index = True,nullable = False)
 
     def save_p(self):
         db.session.add(self)
