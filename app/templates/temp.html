@@ -1,0 +1,32 @@
+{% macro displayBlog(blog_id) %}
+
+    {% if blog_id = post_id %}
+    <div class="container">
+     <article class="media content-section">
+          <div class="media-body">
+               <div class="article-metadata">
+                    <a class="mr-2" href="#">{{ post.user.username }}</a>
+                    <small class="text-muted">{{ post.time }}</small>
+               </div>
+                    <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+                    
+                    <footer class="blockquote-footer text-center" style="color:cyan;"> Posted by: {{post.user.username}}</footer>
+                         <div>
+                              <span class="foot" >{{post.comment.count()}} Comments
+                              </span> 
+                              <span class="foot" > <a href="{{url_for('main.like',id = post.id)}}"><ion-icon name="thumbs-up"></ion-icon></a> {{post.upvote.count()}}
+                              </span>
+                              <span class="foot"> <a href="{{url_for('main.dislike',id = post.id)}}"> <ion-icon name="thumbs-down"></ion-icon> {{post.downvote.count()}}</a>
+                              </span>
+                         </div>
+
+                         <a href="{{url_for('main.comment',blog_id = post.id)}}" class="btn btn-info btn-sm"> Comment</a>
+                         <br>
+                         <p class="article-content">{{ post.post }}</p>
+                </div>
+          </div>
+     </article>
+    </div>
+    {%endif%}
+
+{% endmacro %}

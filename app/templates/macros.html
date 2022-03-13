@@ -8,6 +8,9 @@
 			{% for post in posts %}
 			<article class="media content-section">
 				<div class="media-body">
+                         <span>
+                              <img src="{{url_for('static', filename='photos/' + post.user.profile_pic_path) }}" alt="" class="rounded-circle article-img">
+                         </span>
 					<div class="article-metadata">
 						<a class="mr-2" href="#">{{ post.user.username }}</a>
 						<small class="text-muted">{{ post.time }}</small>
@@ -32,3 +35,6 @@
 	</div>
 </div>
 {% endmacro %}
+
+
+<!-- Displaying blog in its own page -->
