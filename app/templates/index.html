@@ -2,20 +2,13 @@
 
 {% extends 'base.html'%} {% import 'macros.html' as macro %} {% block content %}
 
-<div
-	class="container-fluid"
-	style="
-		background-image: url(https://images.pexels.com/photos/1111320/pexels-photo-1111320.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-	"
->
+<div class="container-fluid">
 	<div class="px-4 py-5 my-5 text-center text-info">
-		<img class="d-block mx-auto mb-4" src="{{url_for('static',
-		filename="favicon_io/favicon.ico")}}" alt="" width="72" height="57" />
-		<h1 class="display-5 fw-bold">Amani Blog</h1>
+		<h1 class="display-5 fw-bold" style="color: cyan">Amani Blog</h1>
 		<div class="col-lg-6 mx-auto">
 			<figure class="text-center">
 				<blockquote class="blockquote">
-					<p>{{quote.quote}}</p>
+					<p>{{quote.quote }}</p>
 				</blockquote>
 				<figcaption class="blockquote-footer">
 					<cite title="Source Title"> {{quote.author}}</cite>

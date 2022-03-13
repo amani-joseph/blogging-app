@@ -5,22 +5,22 @@
 
 
 {% macro display(posts) %}
-<div class="container-fluid">
+<div class="container-fluid" style="background-color: black !important;">
 	<div class="row">
 		{% if posts %}
 		<div class="container">
 			{% for post in posts %}
-			<article class="media content-section">
+			<article class="media content-section w-100 my-3"  style="background-color: black !important; color:white !important; width:60vw !important;">
 				<div class="media-body">
                          <span>
                               <img src="{{url_for('static', filename='photos/' + post.user.profile_pic_path) }}" alt="" class="rounded-circle article-img">
                          </span>
 					<div class="article-metadata">
-						<a class="mr-2" href="#">{{ post.user.username }}</a>
-						<small class="text-muted">{{ post.time }}</small>
+						<a class="mr-2" href="#" >{{ post.user.username }}</a>
+						<small class="text-muted" style="color:yellow !important;">{{ post.time.strftime('%Y-%m-%d') }}</small>
 					</div>
-					<h2><a class="article-title" href="#">{{ post.title }}</a></h2>
-					<p class="article-content">{{ post.post }}</p>
+					<h2><a class="article-title" href="#"  style="color: rgb(18, 191, 214) !important;">{{ post.title }}</a></h2>
+					<p class="article-content">{{ post.post | truncate(150)}} <a href="#" style="color:yellow;"> [Read more]</a> </p>
                          <footer class="blockquote-footer text-center" style="color:cyan;"> Posted by: {{post.user.username}}</footer>
 								<div><span class="foot" >{{post.comment.count()}} Comments</span> 
 									<span class="foot" > <a href="{{url_for('main.like',id = post.id)}}"><ion-icon name="thumbs-up"></ion-icon></a> {{post.upvote.count()}}</span>
