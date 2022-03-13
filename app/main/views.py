@@ -23,8 +23,8 @@ posts = [
 @main.route('/')
 def index():
     blogs = Blog.query.all()
-    message = 'Hello Amani'
-    return render_template('index.html', message=message, posts=blogs)
+    print(blogs)
+    return render_template('index.html', posts=blogs)
 
 
 @main.route('/about/')

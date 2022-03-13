@@ -1,3 +1,25 @@
 <!-- @format -->
 
-{% macro display(yourMacros) %} {% endmacro %}
+{% macro display(posts) %}
+<div class="container-fluid">
+	<div class="row">
+		{% if posts %}
+		<div class="container">
+			{% for post in posts %}
+			<article class="media content-section">
+				<div class="media-body">
+					<div class="article-metadata">
+						<a class="mr-2" href="#">{{ post.user.username }}</a>
+						<small class="text-muted">{{ post.time }}</small>
+					</div>
+					<h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+					<p class="article-content">{{ post.post }}</p>
+				</div>
+			</article>
+			{% endfor %}
+		</div>
+
+		{% endif %}
+	</div>
+</div>
+{% endmacro %}
