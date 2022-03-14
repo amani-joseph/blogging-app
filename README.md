@@ -12,7 +12,7 @@ This is a blogging flask application that allows users to view blogs and to crea
 
 ## Live Link
 
-[https://amani-blogging-app.herokuapp.com/]
+[https://amani-blog.herokuapp.com/]
 
 ## Screenshot
 
