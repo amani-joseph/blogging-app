@@ -28,4 +28,29 @@
          
      </article>     
 </div>
+<div class="container border border-1 mx-auto w-75" style="background-color: black;" id="allcomments">
+	<div class="row mx-auto" >
+		{% if all_comments %}
+		<div class="col-md-7" >
+			<h3 class="text-center text-info fw-bold" id="coms">All comments for the post...</h3>
+			{% for comment in all_comments %}
+			<div class="card w-90 mb-3" style="background-color: black;">
+				<div class="card-body">
+					<p class="card-title text-info">{{ comment.comment }}</p>
+					<p class="card-text text-info">--- {{comment.user.username}}</p>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		
+	</div>
+	{%else%}
+	<div class="card w-90 mb-3" style="background-color: black;">
+		<div class="card-body" style="background-color: black;">
+			<p class="card-title text-info " >Be the first to comment</p>
+		</div>
+	</div>
+	
+	{%endif%}
+</div>
 {% endblock content%}

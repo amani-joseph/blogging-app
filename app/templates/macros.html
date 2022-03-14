@@ -20,7 +20,7 @@
 						<small class="text-muted" style="color:yellow !important;">{{ post.time.strftime('%Y-%m-%d') }}</small>
 					</div>
 					<h2><a class="article-title fw-bold" href="{{url_for('main.blog', blog_id=post.id)}}"  style="color: rgb(161, 167, 166) !important;">{{ post.title }}</a></h2>
-					<p class="article-content">{{ post.post | truncate(150)}} <a href="#" style="color:yellow;"> [Read more]</a> </p>
+					<p class="article-content">{{ post.post | truncate(150)}} <a href="{{url_for('main.blog', blog_id=post.id)}}" style="color:yellow;"> [Read more]</a> </p>
                          <footer class="blockquote-footer text-center" style="color:cyan;"> Posted by: {{post.user.username}}</footer>
 								<div><span class="foot" >{{post.comment.count()}} Comments</span> 
 									<span class="foot" > <a href="{{url_for('main.like',id = post.id)}}"><ion-icon name="thumbs-up"></ion-icon></a> {{post.upvote.count()}}</span>

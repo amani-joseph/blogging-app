@@ -3,7 +3,11 @@
 <header class="site-header bg-dark text-info">
 	<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
 		<div class="container">
-			<a class="navbar-brand mr-4 display-5 fw-bolder" href="/">
+			<a
+				class="navbar-brand mr-4 display-5 fw-bolder"
+				href="/"
+				style="color: cyan"
+			>
 				Amani Blog
 				<!-- <h1 class="ml15 fw-bold" style="color: cyan">
 					<span class="word">Amani</span>
@@ -43,7 +47,10 @@
 						>
 					</a>
 					<li class="nav-item">
-						<a class="nav-link" href="{{url_for('main.new_blog')}}"
+						<a
+							class="nav-link fw-bold"
+							href="{{url_for('main.new_blog')}}"
+							style="color: aqua"
 							>New Blog..</a
 						>
 					</li>
@@ -53,7 +60,9 @@
 						href="{{url_for('main.profile',name=current_user.username)}}"
 						><i class="far fa-user"></i>&nbsp; My account</a
 					>
-					<a class="nav-item nav-link" href="{{url_for('auth.logout')}}"
+					<a
+						class="nav-item nav-link text-danger fw-bold"
+						href="{{url_for('auth.logout')}}"
 						><i class="fas fa-sign-out-alt"></i>&nbsp; Log out</a
 					>
 					{%else%}

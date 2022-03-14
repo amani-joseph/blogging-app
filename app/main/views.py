@@ -25,7 +25,7 @@ def about():
 @main.route('/blog/<int:blog_id>', methods = ['GET'])
 @login_required
 def blog(blog_id):
-    
+    form = CommentForm()
     blog = Blog.query.get(blog_id)
     all_comments = Comment.query.filter_by(blog_id = blog_id).all()
    

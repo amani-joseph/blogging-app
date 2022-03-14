@@ -1,3 +1,7 @@
 Hello {{user.username}}
-Welcome to <<app name>>
-We have just seen you have signed up for our application and want to welcome you to the family.
+Welcome to amani.blog
+I see you have just seen you have just signed up to the blog and want to welcome you to the platform.
+
+I hope you enjoy your reads. Looking forward to reading your blogs too.
+
+Welcome!!

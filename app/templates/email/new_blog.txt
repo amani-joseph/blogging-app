@@ -1,0 +1,3 @@
+Hello {{user.username}}
+We got a new read for you!!
+
