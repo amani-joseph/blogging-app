@@ -8,17 +8,17 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = True
     UPLOADED_PHOTOS_DEST = 'app/static/photos'  
     #   email configurations
-    # MAIL_SERVER = 'smtp.googlemail.com'
-    # MAIL_PORT = 587 
-    # MAIL_USE_TLS = True
-    # MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
-    # MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
-    # SUBJECT_PREFIX = '<<xxxxx>>'
-    # SENDER_EMAIL = '<<your sending email>>'
+    MAIL_SERVER = 'smtp.googlemail.com'
+    MAIL_PORT = 587 
+    MAIL_USE_TLS = True
+    MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
+    MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
+    SUBJECT_PREFIX = 'Welcome to amani.blog !!'
+    SENDER_EMAIL = 'amani.blogging@gmail.com'
 
     # simple mde  configurations
-    # SIMPLEMDE_JS_IIFE = True
-    # SIMPLEMDE_USE_CDN = True
+    SIMPLEMDE_JS_IIFE = True
+    SIMPLEMDE_USE_CDN = True
 
 class ProdConfig(Config):
     '''
