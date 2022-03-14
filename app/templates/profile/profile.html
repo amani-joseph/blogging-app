@@ -4,8 +4,14 @@
 <div class="container d-flex flex-column justify-content-center">
 	<div class="container m-3">
 		<div class="row">
-			<div class="col-lg-10 col-sm-12 col-xs-12">
-				<div class="card testimonial-card border rounded-3">
+			<div
+				class="col-lg-12 col-sm-12 col-xs-12"
+				style="background-color: black"
+			>
+				<div
+					class="card testimonial-card border text-info rounded-3"
+					style="background-color: black"
+				>
 					<div class="card-img text-center">
 						{% if user.profile_pic_path %}
 						<img
@@ -21,9 +27,11 @@
 					</div>
 
 					<div class="card-body">
-						<h5 class="text-center"> {{user.username| capitalize}}</h5>
+						<h5 class="text-center text-info">
+							{{user.username| capitalize}}</h5
+						>
 						<hr />
-						<h5 class="text-center"> {{user.email}}</h5>
+						<h5 class="text-center text-warning"> {{user.email}}</h5>
 						<hr />
 						{% if user.bio %}
 						<p class="text-center m-3"
@@ -43,6 +51,7 @@
 									>Update Profile-pic</button
 								>
 							</div>
+							<br />
 
 							<div id="imgform">
 								<form
@@ -56,6 +65,7 @@
 										class="form-control"
 										required
 									/>
+									<br />
 									<input
 										type="submit"
 										class="btn btn-sm btn-info"
@@ -72,15 +82,15 @@
 			<div class="col-lg-12" id="user">
 				{% if current_user %}
 				<h3
-					class="text-center fw-bolder p-3 text-decoration-underline border rounded-3"
-					style="background: #09203f"
+					class="text-center fw-bolder p-3 text-decoration-underline border text-info rounded-3"
+					style="background: black"
 					>You have {{user.blogs.count()}} Blogs</h3
 				>
 				{% for i in posts%}
-				<div class="blogs text-center text-white">
-					<h5>Title: {{i.title}}</h5>
-					<h6>{{i.post}}</h6>
-					<p>{{i.comment.count()}} Comments</p>
+				<div class="blogs text-center text-white my-3">
+					<h5 class="text-info my-3 fw-bold">Title: {{i.title}}</h5>
+					<h6 class="text-light">{{i.post}}</h6>
+					<p class="text-warning">{{i.comment.count()}} Comments</p>
 				</div>
 
 				{%endfor%} {%else%}

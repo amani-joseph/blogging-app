@@ -23,7 +23,7 @@ def about():
 
 
 @main.route('/blog/<int:blog_id>', methods = ['GET'])
-@login_required
+
 def blog(blog_id):
     form = CommentForm()
     blog = Blog.query.get(blog_id)

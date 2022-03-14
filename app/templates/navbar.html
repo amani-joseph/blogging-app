@@ -66,10 +66,16 @@
 						><i class="fas fa-sign-out-alt"></i>&nbsp; Log out</a
 					>
 					{%else%}
-					<a class="nav-item nav-link" href="{{url_for('auth.login')}}"
+					<a
+						class="nav-item nav-link fw-bold mx-3"
+						style="color: aqua"
+						href="{{url_for('auth.login')}}"
 						>Login</a
 					>
-					<a class="nav-item nav-link" href="{{url_for('auth.signup')}}"
+					<a
+						class="nav-item nav-link fw-bold mx-3"
+						style="color: aqua"
+						href="{{url_for('auth.signup')}}"
 						>Register</a
 					>
 					{%endif%}
