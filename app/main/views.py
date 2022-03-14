@@ -12,7 +12,7 @@ from flask_login import login_required, current_user
 def index():
     blogs = Blog.query.all()
     random_quote = get_quote()
-    print(random_quote)
+    
     return render_template('index.html', posts=blogs, quote=random_quote)
 
 
@@ -22,6 +22,14 @@ def about():
     return render_template('about.html', title='About', message=message)
 
 
+@main.route('/blog/<int:blog_id>', methods = ['GET'])
+@login_required
+def blog(blog_id):
+    
+    blog = Blog.query.get(blog_id)
+    all_comments = Comment.query.filter_by(blog_id = blog_id).all()
+   
+    return render_template('blog.html', blog = blog,all_comments=all_comments)
 
 @main.route('/comment/<int:blog_id>', methods = ['POST','GET'])
 @login_required

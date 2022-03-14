@@ -1,5 +1,31 @@
 <!-- @format -->
 
-{% extends 'base.html'%} {% import 'macros.html' as macro %} {% block content %}
-<div class="container"> {{ macro.display() }} </div>
+{% extends 'base.html'%} {% block content %}
+<div class="container"> 
+     <article class="media content-section w-100 my-3 mx-auto"  style="background-color: black !important; color:white !important; width:60vw !important;">
+          <div class="media-body">
+               <span>
+                    <img src="{{url_for('static', filename='photos/' + blog.user.profile_pic_path) }}" alt="" class="rounded-circle article-img">
+               </span>
+               <div class="article-metadata">
+                    <a class="mr-2" href="#" style="color: aqua;" >{{ blog.user.username }}</a>
+                    <small class="text-muted" style="color:yellow !important;">{{ blog.time.strftime('%Y-%m-%d') }}</small>
+               </div>
+               <h2><a class="article-title fw-bold" href="#"  style="color: rgb(161, 167, 166) !important;">{{ blog.title }}</a></h2>
+               
+               <footer class="blockquote-footer text-center" style="color:cyan;"> Posted by: {{blog.user.username}}</footer>
+               <br>
+                <p class="article-content">{{ blog.post }}</p>
+                <br>
+                <div><span class="foot" >{{blog.comment.count()}} Comments</span> 
+                    <span class="foot" > <a href="{{url_for('main.like',id = blog.id)}}"><ion-icon name="thumbs-up"></ion-icon></a> {{blog.upvote.count()}}</span>
+                    <span class="foot"> <a href="{{url_for('main.dislike',id = blog.id)}}"> <ion-icon name="thumbs-down"></ion-icon> {{blog.downvote.count()}}</a></span></div>
+     
+                <a href="{{url_for('main.comment',blog_id = blog.id)}}" class="btn btn-info btn-sm"> Comment</a>
+                
+          </div>
+          </div>
+         
+     </article>     
+</div>
 {% endblock content%}
