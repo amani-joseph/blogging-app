@@ -16,8 +16,8 @@ This is a blogging flask application that allows users to view blogs and to crea
 
 ## Screenshot
 
-<!-- <img src="https://github.com/amani-joseph/pitch-in-sixty/blob/master/app/static/images/pitch-in-sixty.herokuapp.com_signup.png?raw=true" >
-<img src="https://github.com/amani-joseph/pitch-in-sixty/blob/master/app/static/images/pitch-in-sixty.herokuapp.com_login.png?raw=true" >
+<img src="https://github.com/amani-joseph/blogging-app/blob/master/app/static/images/1.png?raw=true" >
+<!-- <img src="https://github.com/amani-joseph/pitch-in-sixty/blob/master/app/static/images/pitch-in-sixty.herokuapp.com_login.png?raw=true" >
 <img src="https://github.com/amani-joseph/pitch-in-sixty/blob/master/app/static/images/pitch-in-sixty.herokuapp.com_%20(1).png?raw=true" >
  -->
 
