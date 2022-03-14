@@ -5,10 +5,13 @@ content %}
 <div class="container" id="allcomments">
 	<div class="row">
 		{% if all_comments %}
-		<div class="col-md-7">
-			<h3 class="text-center" id="coms">All comments for the post</h3>
+		<div class="col-md-12 commentform text-info">
+			{{wtf.quick_form(form)}}
+		</div>
+		<div class="col-md-7" style="background-color: black">
+			<h3 class="text-center text-info" id="coms">All comments for the post</h3>
 			{% for comment in all_comments %}
-			<div class="card w-90 mb-3">
+			<div class="card w-90 mb-3 text-info" style="background-color: black">
 				<div class="card-body">
 					<p class="card-title">{{ comment.comment }}</p>
 					<p class="card-text">--- {{comment.user.username}}</p>
@@ -16,15 +19,14 @@ content %}
 			</div>
 			{% endfor %}
 		</div>
-		<div class="col-md-5 commentform"> {{wtf.quick_form(form)}} </div>
 	</div>
 	{%else%}
-	<div class="card w-90 mb-3">
-		<div class="card-body">
-			<p class="card-title">Be the first to comment</p>
+	<div class="card w-90 mb-3" style="background-color: black">
+		<div class="card-body" style="background-color: black">
+			<p class="card-title text-info">Be the first to comment</p>
 		</div>
 	</div>
-	<div class="col-md-5"> {{wtf.quick_form(form)}} </div>
+	<div class="col-md-12 text-info"> {{wtf.quick_form(form)}} </div>
 	{%endif%}
 </div>
 
