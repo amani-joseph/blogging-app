@@ -27,13 +27,13 @@ class ProdConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://< your heroku url here>'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://pfzrwwfmjgjfli:2a7e164de6b4bf8f71ba1e595da04d3a1bb86c011dacff66954f77e0d3a1de6a@ec2-3-231-254-204.compute-1.amazonaws.com:5432/d6tfdgpcmra51f'
     pass
     
   
     
 class TestConfig(Config):
-    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://<<user>>:<<Password>>@localhost/<<db_name>>'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://j03:j03@localhost/blog'
     pass
     
 class DevConfig(Config):
